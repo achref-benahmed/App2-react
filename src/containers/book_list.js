@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { connect } from 'react-redux'
 
 export default class BookList extends Component {
 
@@ -6,9 +7,10 @@ export default class BookList extends Component {
 
 		return this.props.books.map((book) =>{
 			return (
-				<li key= {book.title} className="listgroup-item") 
+				<li key= {book.title} className="listgroup-item">
 					{book.title}
 				</li>
+				)
 		})
 	}
 
