@@ -27,3 +27,11 @@ export default class BookList extends Component {
 			)
 	}
 }
+
+function mapStateToprops (state){
+
+	return {
+
+		
+	}
+}
