@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux' ;
-import {slectBook} from '../actions/index.js';
+import {selectBook} from '../actions/index.js';
 import {bindActionCreators} from 'redux';
 
  class BookList extends Component {
@@ -9,7 +9,9 @@ import {bindActionCreators} from 'redux';
 
 		return this.props.books.map((book) =>{
 			return (
-				<li key= {book.title} className="listgroup-item">
+				<li key= {book.title}
+        onClick={() => this.props.selectBook(book)}
+         className="listgroup-item">
 					{book.title}
 				</li>
 				)
@@ -26,8 +28,8 @@ render() {
 }
 
 function mapStateToProps(state) {
-  
- 
+
+
   return {
     books: state.books
   };
@@ -35,7 +37,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps (dispatch ) {
 
-	return bindActionCreators ({selectBook: selecBook}, dispatch);
+	return bindActionCreators ({selectBook: selectBook}, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps) (BookList);

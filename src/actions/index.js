@@ -1,4 +1,4 @@
-function selectBook (book){
+export function selectBook (book){
 
-	consol.log ("bookkkk", book.title);
+	console.log ("bookkkk", book.title);
 }
